@@ -1,0 +1,8 @@
+[*] Get ESLint to accept the current thing
+[*] Set up S3, RDS, etc. and make an env script
+    [*] test the app
+[ ] Refactor into /users and /feed
+[ ] Containerize
+[ ] Set up CI/CD pipeline with Travis
+[ ] Set up Kubernetes
+[ ] Add logs
