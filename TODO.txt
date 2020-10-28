@@ -2,7 +2,7 @@
 [*] Set up S3, RDS, etc. and make an env script
     [*] test the app
 [*] Refactor into /users and /feed
-[ ] Containerize
+[*] Containerize services
 [ ] Set up nginx
 [ ] Set up CI/CD pipeline with Travis
 [ ] Set up Kubernetes
