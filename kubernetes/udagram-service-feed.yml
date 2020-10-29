@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: udagram-service-feed
+spec:
+  selector:
+    matchLabels:
+      app: udagram-service-feed
+  template:
+    metadata:
+      labels:
+        app: udagram-service-feed
+    spec:
+      containers:
+      - name: udagram-service-feed
+        image: crdominguez/udagram-service-feed
+        envFrom:
+          - secretRef:
+              name: udagram-secrets
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080
