@@ -3,7 +3,9 @@
     [*] test the app
 [*] Refactor into /users and /feed
 [*] Containerize services
-[ ] Set up nginx
+[*] Set up nginx
+[ ] github
 [ ] Set up CI/CD pipeline with Travis
+[ ] Set up frontend
 [ ] Set up Kubernetes
 [ ] Add logs
