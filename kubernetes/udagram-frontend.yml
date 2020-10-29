@@ -6,6 +6,7 @@ spec:
   selector:
     matchLabels:
       app: udagram-frontend
+  replicas: 1
   template:
     metadata:
       labels:
