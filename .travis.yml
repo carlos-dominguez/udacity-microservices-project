@@ -1,3 +1,8 @@
 language: node_js
 node_js:
   - 12
+
+jobs:
+    include:
+        - stage: build
+          script: docker build ./udagram-service-feed -t crdominguez/udagram-service-feed
