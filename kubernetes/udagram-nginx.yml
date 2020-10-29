@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: udagram-nginx
+spec:
+  selector:
+    matchLabels:
+      app: udagram-nginx
+  template:
+    metadata:
+      labels:
+        app: udagram-nginx
+    spec:
+      containers:
+      - name: udagram-nginx
+        image: crdominguez/udagram-nginx
+        envFrom:
+          - secretRef:
+              name: udagram-secrets
+        resources:
+          limits:
+            memory: "128Mi"
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: udagram-nginx
+spec:
+  type: ClusterIP
+  selector:
+    app: udagram-nginx
+  ports:
+  - port: 8080
+    targetPort: 8080
