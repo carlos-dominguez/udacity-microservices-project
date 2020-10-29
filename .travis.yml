@@ -6,3 +6,5 @@ jobs:
     include:
         - stage: build
           script: docker build ./udagram-service-feed -t crdominguez/udagram-service-feed
+        - stage: build
+          script: docker build ./udagram-service-user -t crdominguez/udagram-service-user
