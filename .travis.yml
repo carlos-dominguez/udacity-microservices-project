@@ -8,7 +8,7 @@ jobs:
             - docker push crdominguez/udagram-service-feed
         - script: 
             - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-            - docker build ./udagram-service-user -t crdominguez/udagram-service-feed
+            - docker build ./udagram-service-user -t crdominguez/udagram-service-user
             - docker push crdominguez/udagram-service-user
         - script: 
             - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
