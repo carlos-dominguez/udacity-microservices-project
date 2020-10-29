@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: udagram-service-feed
+  name: udagram-service-user
 spec:
   selector:
     matchLabels:
-      app: udagram-service-feed
+      app: udagram-service-user
   template:
     metadata:
       labels:
-        app: udagram-service-feed
+        app: udagram-service-user
     spec:
       containers:
-      - name: udagram-service-feed
-        image: crdominguez/udagram-service-feed
+      - name: udagram-service-user
+        image: crdominguez/udagram-service-user
         envFrom:
           - secretRef:
               name: udagram-secrets
@@ -27,10 +27,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: udagram-service-feed
+  name: udagram-service-user
 spec:
   selector:
-    app: udagram-service-feed
+    app: udagram-service-user
   ports:
   - port: 8080
     targetPort: 8080
