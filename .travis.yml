@@ -6,5 +6,13 @@ jobs:
     include:
         - stage: build
           script: docker build ./udagram-service-feed -t crdominguez/udagram-service-feed
-        - stage: build
-          script: docker build ./udagram-service-user -t crdominguez/udagram-service-user
+        - script: docker build ./udagram-service-user -t crdominguez/udagram-service-user
+        - script: docker build ./udagram-frontend -t crdominguez/udagram-frontend
+        - script: docker build ./nginx -t crdominguez/udagram-nginx
+        - stage: deploy
+          script:
+            - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+            - docker push crdominguez/udagram-service-feed
+            - docker push crdominguez/udagram-service-user
+            - docker push crdominguez/udagram-frontend
+            - docker push crdominguez/udagram-nginx
